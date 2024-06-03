@@ -1,0 +1,21 @@
+plugins {
+    id "com.netflix.nebula.netflixoss" version "11.3.1"
+    id "me.champeau.jmh" version "0.7.1"
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+}
+
+subprojects {
+    apply plugin: 'nebula.netflixoss'
+    apply plugin: 'java-library'
+
+    group = "com.netflix.hystrix"
+
+    tasks.withType(Javadoc).configureEach {
+        failOnError = false
+    }
+}

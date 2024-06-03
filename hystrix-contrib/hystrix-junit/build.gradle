@@ -1,0 +1,4 @@
+dependencies {
+  api project(':hystrix-core')
+  api "junit:junit:4.11"
+}

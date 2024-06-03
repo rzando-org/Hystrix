@@ -1,0 +1,9 @@
+dependencies {
+    api project(':hystrix-core')
+    compileOnly 'junit:junit-dep:4.10'
+}
+
+task(runDemo, dependsOn: 'classes', type: JavaExec) {
+	main = 'com.netflix.hystrix.examples.demo.HystrixCommandDemo'
+	classpath = sourceSets.main.runtimeClasspath
+}
